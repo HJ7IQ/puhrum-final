@@ -1,11 +1,12 @@
+
 <!doctype html>
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>كتف من ورق - puhrum</title>
+    <title>من خطوة على القمر إلى حلم الاستيطان - puhrum</title>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <style>
         :root { --primary: #000000; --secondary: #931916; --gray: #64748b; --gray-light: #f1f5f9; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -13,51 +14,52 @@
         a { text-decoration: none; color: inherit; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         .header { background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.06); padding: 1rem 0; }
-        .header .container { display: flex; justify-content: space-between; align-items: center; flex-direction:  }
+        .header .container { display: flex; justify-content: space-between; align-items: center; }
         .logo h1 a { color: var(--primary); font-weight: 800; font-size: 1.9rem; }
         .logo h1 a span { color: var(--secondary); }
         .back-btn { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--secondary); font-weight: 600; padding: 0.7rem 1.6rem; border-radius: 50px; background: rgba(147,25,22,0.08); transition: all 0.3s ease; }
         .back-btn:hover { background: var(--secondary); color: white; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(147,25,22,0.3); }
-        .article-hero { background: linear-gradient(135deg, var(--primary) 0%, #1a0a0a 100%); padding: 4rem 0; text-align: center; position: relative; overflow: hidden; }
-        .article-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(147,25,22,0.5) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%); }
-        .article-hero::after { content: ''; position: absolute; top: -40%; right: -10%; width: 400px; height: 400px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; animation: rotate 20s linear infinite; }
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .article-hero { background: linear-gradient(135deg, var(--primary) 0%, #1a1a1a 100%); padding: 4rem 0; text-align: center; position: relative; overflow: hidden; }
+        .article-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(147,25,22,0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%); }
+        .article-hero::after { content: ''; position: absolute; top: -40%; right: -15%; width: 500px; height: 500px; border: 1px solid rgba(255,255,255,0.08); border-radius: 50%; animation: float 10s ease-in-out infinite; }
+        @keyframes float { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-25px,25px) rotate(8deg); } }
         .hero-content { position: relative; z-index: 2; }
         .category-badge { display: inline-block; background: var(--secondary); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; }
-        .hero-content h1 { color: #ffffff; font-size: clamp(1.5rem,5vw,2.3rem); font-weight: 800; margin-bottom: 1.8rem; line-height: 1.3; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .meta { display: flex; justify-content: center; gap: 2rem; font-size: 0.95rem; color: rgba(255,255,255,0.8); flex-wrap: wrap; }
+        .hero-content h1 { color: #ffffff; font-size: clamp(1.4rem,5vw,2.4rem); font-weight: 800; margin-bottom: 1.8rem; line-height: 1.4; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .meta { display: flex; justify-content: center; gap: 2.5rem; font-size: 1rem; color: rgba(255,255,255,0.85); flex-wrap: wrap; }
         .meta-item { display: flex; align-items: center; gap: 0.5rem; }
         .meta-item i { color: var(--secondary); }
         .author { font-weight: 600; color: #fff; }
-        .article-content { padding: 3rem 0; }
-        .content-wrapper { background: white; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
-        .review-text { padding: 2.5rem 3rem 1.5rem; font-size: 1.05rem; line-height: 1.9; color: #334155; text-align: justify; }
-        .review-text p { margin-bottom: 1.2rem; }
-        .quote-box { background: linear-gradient(135deg,#fef9f9,#fef2f2); border-right: 4px solid var(--secondary); padding: 1.5rem 2rem; margin: 1.5rem 3rem; border-radius: 0 12px 12px 0; }
-        .quote-box p { color: var(--primary); font-size: 1rem; line-height: 1.8; }
-        .art-image-wrapper { padding: 1rem 3rem 2rem; text-align: center; }
-        .art-image-wrapper img { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
-        .editor-credit { display: flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 1rem; background: var(--gray-light); margin: 1.5rem 3rem; border-radius: 10px; font-size: 0.9rem; color: var(--gray); }
+        .article-content { padding: 4rem 0; }
+        .content-wrapper { background: white; border-radius: 24px; box-shadow: 0 0 0 1px rgba(0,0,0,0.05), 0 25px 50px -12px rgba(0,0,0,0.12); overflow: hidden; }
+        .review-text { padding: 3rem 3rem 1.5rem; font-size: 1.1rem; line-height: 2; color: #334155; text-align: justify; }
+        .review-text p { margin-bottom: 1.4rem; }
+        .quote-box { background: linear-gradient(135deg,#fefbfb,#fef3f3); border-right: 5px solid var(--secondary); padding: 1.5rem 2rem; margin: 1.5rem 3rem; border-radius: 0 16px 16px 0; }
+        .quote-box p { font-style: italic; color: var(--primary); font-size: 1.1rem; line-height: 1.9; }
+        .quote-box .author { font-size: 0.9rem; color: var(--gray); font-style: normal; margin-top: 0.5rem; text-align: left; }
+        .art-image-wrapper { padding: 1.5rem 3rem 2.5rem; text-align: center; }
+        .art-image-wrapper img { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .editor-credit { display: flex; align-items: center; justify-content: center; gap: 0.8rem; padding: 1.5rem; background: var(--gray-light); margin: 2rem 3rem; border-radius: 12px; font-size: 0.95rem; color: var(--gray); }
         .editor-credit i { color: var(--secondary); }
         .editor-name { font-weight: 600; color: var(--primary); }
-        .footer { background: var(--primary); color: white; text-align: center; padding: 2rem 0; font-weight: 600; }
-        @media (max-width: 768px) { .header .container { flex-direction: column; gap: 1rem; text-align: center; } .hero-content h1 { font-size: 1.4rem; } .meta { flex-direction: column; gap: 0.6rem; } .review-text,.quote-box,.art-image-wrapper,.editor-credit { margin: 1rem 1.5rem; padding: 1rem 1.5rem; } }
+        .footer { background: var(--primary); color: white; text-align: center; padding: 2.5rem 0; font-weight: 600; }
+        @media (max-width: 768px) { .header .container { flex-direction: column; gap: 1rem; text-align: center; } .hero-content h1 { font-size: 1.3rem; } .meta { flex-direction: column; gap: 0.8rem; } .review-text,.quote-box,.art-image-wrapper,.editor-credit { margin: 1.5rem 1.5rem; padding: 1.5rem; } }
     </style>
   </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="logo"><h1><a href="home.html">puhrum</a></h1></div>
-            <a href="home.html" class="back-btn"><i class="fas fa-arrow-right"></i> العودة</a>
+            <a href="home.html" class="back-btn"><i class="fas fa-arrow-left"></i> العودة </a>
         </div>
     </header>
     <section class="article-hero">
         <div class="container">
             <div class="hero-content">
-                <span class="category-badge"><i class="fas fa-book-open"></i> مقابلات</span>
-                <h1>كتف من ورق</h1>
+                <span class="category-badge"><i class="fas fa-rocket"></i> اراء</span>
+                <h1>    عندما يصبح التفوق قولبةً للمعرفة… هل فقدنا مهارة التعلم الجامعي؟</h1>
                 <div class="meta">
-                    <div class="meta-item"><i class="fas fa-pen"></i><span>سارة أحمد</span></div>
+                    <div class="meta-item"><i class="fas fa-user"></i><span class="author">    زهراء عصام</span></div>
                     <div class="meta-item"><i class="fas fa-calendar"></i><span>أبريل</span></div>
                 </div>
             </div>
@@ -66,58 +68,83 @@
     <main class="article-content">
         <div class="container"><div class="content-wrapper">
             <div class="review-text">
-<p>كتــفٌ مِـن ورق
+  
+                                <p>عندما يصبح التفوق قولبةً للمعرفة… هل فقدنا مهارة التعلم الجامعي؟
 
-السلام عليك يا صاحبي...
-جُملةٌ قرأتُها في كتاب أدهم شرقاوي: "السلام عليك يا صاحبي". 
-لم أعلم أن ثلاث كلماتٍ يمكنها أن تكون وطنًا، كيف لكتابٍ أن يكون كتفًا تبكي عليه روحٌ منهكة، لم تجد في الدنيا من يسندها؟
+داخل القاعة الدراسية، ليس كل صمتٍ احتراماً، وليس كل تفوقٍ فهماً؛ فكثير من الطلبة أتقنوا "القالب" لا المضمون. في بيئةٍ يُفترض أنها تصنع العقول، نجد الاختلاف يتلاشى تدريجياً؛ فالسؤال المغاير يُصنف "تشتتاً"، وطلب التبسيط يُفسر "ضعفاً"، ومن يحاول التفكير خارج المسار يُعاد قسراً إلى "النموذج الصحيح".
 
-رأيتُ قبل أيامٍ طفلة صغيرة، غارقة في صفحاته، وعيناها تفيضان بدمعٍ لا يليقُ بوجهها الصغير. 
-ما كانت تبكي حزنًا بل ارتياحًا.
- ابتسامتها غريبة يا صاحبي، كأنها وجدت ضالتها. كأن كلمات الكتاب تمسح على رأسها بهدوء، وتهمس لها: "أنا هنا معك، لن أؤذيكِ". 
+إن المعضلة هنا تتجاوز طرق الشرح إلى تساؤلٍ أعمق: هل نُعلّم لنبني فهماً أم لنُدير نظام فرزٍ يقيس القدرة على التكيف؟ بمرور الوقت، يتخلى الطالب عن تطوير أسلوبه الخاص ويكتفي بتقليد الطريقة المقبولة سعياً وراء النجاح الأكاديمي. لكن السؤال الجوهري يبرز عند الانتقال إلى سوق العمل: هل هذا النجاح كافٍ؟
 
-أتساءل: أي كلماتٍ قيلت لتلك الطفلة حتى تجد عزاءها؟
- وأي جُملٍ سقطت على قلبها فجعلتها تبحث عن حضنٍ بلا أذى؟
+في الواقع، يواجه الخريج فجوةً صادمة؛ فالسوق لا يطلب استرجاع إجابات نموذجية، بل يتطلب مواجهة مشكلات غير متوقعة واتخاذ قرارات جريئة. وهنا تظهر تبعات "القولبة"؛ حيث يتردد الطالب الذي اعتاد التلقين في طرح رأي مختلف، مفضلاً انتظار التعليمات والالتزام بالأنماط الموجودة حتى وإن كانت غير فعالة.
 
-حين نبحر في صفحات الكتاب، نجد الإجابة. أدهم شرقاوي لم يكتب مجرد نصوص، بل رمم أرواحاً أتعبتها الكلمات القاسية. 
-يقول في إحدى صفحاته: "أن تشعر أنك لا تهون"، وهنا تكمن العقدة والحل. 
-فالطفلة التي بكت، ربما وجدت في الكتاب اعترافاً بوجعها الذي استهان به الآخرون.
+ورغم أن البعض يرى أن الجامعة توفر المنهج والبيئة، وأن تطوير الذات مسؤولية الطالب وحده، إلا أن توفير البيئة لا يكفي إن لم تُتح المساحة للتفكير بدلاً من التكيف. الفجوة ليست في غياب المحتوى، بل في آلية تقديمه التي تفترض أن كل العقول تُفهم بالطريقة ذاتها.
 
-الكتاب يخبرنا أن "الكلمة" هي التي تحدد مسار حياتنا؛ فإما أن نكون كيوسف الذي تعزّى بريح قميص أبيه، أو كإخوته الذين ألقوه في الجب بكلماتهم وتآمرهم. 
+إن النظام الذي يُكافئ الامتثال والنتائج الرقمية على حساب بناء الفهم والسؤال الجيد، يعامل العقول كنسخ متطابقة؛ التعليم الحقيقي لا يصنع نسخاً، بل يخلق اختلافاً واعياً، وإذا استمررنا في كسر هذا الاختلاف داخل القاعة، فلا ينبغي أن نتفاجأ من غيابه وتلاشي الإبداع خارجها؛ فالخطر الحقيقي ليس في أن يخطئ الطالب، بل في أن يتعلم ألا يسأل.
+</p>
 
-وهكذا هي الكلمات يا صاحبي.. لا تُنسى، 
-ولا تُغفر بسهولة. 
-هي ليست مجرد حروف تُنطق، بل بذرة تزرعها في روح إنسان، فلا تدري أتصير غصنًا يظلله، أم شوكة تخنقه كلما كبر؟
-
-أتعلم الفرق بين الباني والهادم؟
-الباني يدرك أن "ثمة جوع لا يسده إلا شخص واحد"، فيكون هو ذلك الشخص بكلمة طيبة. الباني يقول: "أراك متعبًا، فلتستند"،
-بينما الهادم يجلد الروح بسؤاله: "لماذا دائمًا متعب؟".
-
- الكتاب يعلمنا أن الكلمة الطيبة "أمان"، وأن أعظم ما نقدمه لغيرنا هو أن نشعرهم بأنهم "مفهومون" حتى وإن خانتهم مفرداتهم.
-
-ولِـمَ نحنُ سطحيون جدًا مع الكلمات؟
- نلقيها جزافاً كمن يرمي الحجارة. لكن الكتاب يذكرنا بأن الكلمات كالأرواح، إذا خرجت لا تعود.
-الكلمة الطيبة شجرة مباركة، والسيئة سمّ يبقى في الجسد سنين.
-
-لن أنسى يا صاحبي، كنتُ في يومٍ من أصعب أيام عُمري، حين جاءني صديق ووضع يده على كتفي وقال: "أنت أقوى مما تظن".
-لم يحل مشكلتي مادياً، لكنه طبق فلسفة "السلام عليك يا صاحبي"؛ أعطاني ظناً حسناً بنفسي، وهذا هو جوهر الكتاب: أن نكون لبعضنا "ملاذاً" لا "ميدان حرب".
-وكم منّا يا صاحبي من هَدم؟ وكم منّا من بُنيَ ثم هُدِم؟
-لا تستهن، فجِراح الكلام لا تلتئم بالزمن، 
-بل تلتئم حين تأتي كلمة أخرى ألطف وأكثر رحمة، تماماً كما يفعل هذا الكتاب مع قرائه.
-
-قبل أن تنام الليلة، تذكر ما تعلمناه من "صاحبنا":
-أي كلمةٍ ستكون آخر ما تسمع؟ 
-وأي كلمةٍ ستكون آخر ما تقول؟
-عش كأن كل كلمة قد تكون الأخيرة، 
-وقبل أن تنطق، تذكر أن هناك قلباً يسمعك؛ إما أن تبنيه أو تهدمه.. 
-فلا توجد منطقة رمادية في مملكة الكلام.
-
-والسلامُ لقلبك.</p>
             </div>
-      \
+           
+            <div class="review-text">
+                <p>إسقاط واقعي على البيئة الدراسية
+
+لا يتوقف الأمر عند التنظير، بل يتجسد يومياً داخل القاعات؛ حيث لا يُقاس الفهم بالتحليل، بل بمطابقة "النموذج المعتمد". لقد بات غياب الصياغة الجاهزة في الإجابة سبباً للتقييم السلبي، تحت شعار "إن لم تكتب ما أراه صحيحاً فستأخذ صفراً"، في اختزالٍ حاد للطالب داخل مسميات (مهندس، طبيب) وكأن الخطأ محظور عليه، رغم أن الجامعة هي المختبر الأول للتعلم من الخطأ. هذا النمط خلق مفارقة: طالبٌ يحصد الدرجات الكاملة بالحفظ الميكانيكي دون إدراك للمنطق، وآخر يملك الفهم لكنه "خارج النص".
+
+ويمتد هذا النهج ليخنق الفضول المعرفي؛ ونستذكر هنا نموذجاً لزميلٍ في دفعتي كان شعلةً من النشاط والأسئلة الدقيقة التي تسبق المنهج، لكن هذا الحماس انطفأ بجملة عابرة من أحد الأساتذة: "يكفي… لقد تماديتم". تلك الكلمات، وإن بدت مزاحاً، وضعت حداً غير معلن للسؤال، وحولت مساحة التفكير المفتوح إلى ممرٍ ضيق، مما دفع الطالب للتراجع تدريجياً بعدما أدرك أن الأمان الأكاديمي يكمن في "التكرار" لا "الابتكار".
+
+أما في التقييم الرقمي، فتظهر فجوة أخرى؛ حيث يُختزل الجهد العقلي في النتيجة النهائية فقط. في المسائل الهندسية التي تقوم على المنهجية والتسلسل، قد يؤدي خطأ عددي بسيط في الخطوة الأخيرة إلى نسف مجهودٍ كامل، ليُساوى من حاول وفكر بمن سلّم ورقة فارغة. إن تجاهل "التفكير المنهجي" لصالح "الناتج الرقمي" يُفرغ العملية التعليمية من جوهرها، ويحول المختبرات إلى خطوات ميكانيكية تُنفذ بلا روح اكتشاف.
+
+وفي سياق المشاريع، يُفرض الالتزام بالنماذج التقليدية، مع استبعاد الأفكار المبتكرة لأنها لا تنتمي لـ "المعتاد". ويُبرر ذلك أحياناً بكون الأجيال السابقة عانت أكثر، وهو قياسٌ غير منطقي؛ فليس من المعقول أن نركب الجمال للتنقل بينما البشر صنعوا القطارات والسيارات والطائرات ومثل ذلك ظهور الذكاء الاصطناعي الذي بات ضرورة في سوق العمل تماماً كبرامج (Python) و (Office).
+
+هذا الواقع أنتج نوعين من الطلبة: صاحب درجات عالية يعجز عن شرح المفهوم لاعتماده على الحفظ، وطالبٌ قد لا يعكس تقييمه الرقمي ذكاءه لكنه قادر على تبسيط أعقد المفاهيم لأنه تعامل معها كفكرة لا كنص. إن الاستمرار في هذا النهج يُرسخ قناعة خطيرة: أن النجاة الأكاديمية تتحقق بالتكيف لا بالتفكير النقدي.
+</p>
+                                
+
+            </div>
+            <div class="review-text">
+                <p>الأثر التراكمي: من ضيق القاعة إلى فجوة العمل
+
+لا يتوقف أثر "القولبة" عند حدود القاعة، بل يعيد تشكيل سلوك الطالب؛ فيتحول تركيزه من "كيف أفهم؟" إلى "ماذا أحفظ؟"، ويحلّ منطق تقليل المخاطرة محل الفضول الأكاديمي. هذا الطالب، حين يواجه سوق العمل، يجد نفسه عاجزاً عن المبادرة أو اقتراح حلول لمشاكل مختلفة، لأنه اعتاد على نظام "السؤال الذي يملك جواباً واحداً فقط". هكذا يضيع الخريج بين عالم نظري لم يستوعبه بعمق، وعالم عملي لم يُدرّب على أدواته، فيتحول إلى موظف "يُنفذ" ولا "يُطور".
+
+رؤية تربوية: التعلم المتمركز حول الطالب
+
+تؤكد الأدبيات التربوية الحديثة أن الحل ليس بتكثيف المناهج، بل بإعادة صياغة التعامل مع المعرفة؛ بحيث لا يُعامل الحل كقالب للنسخ بل كفكرة للتفكيك. وهنا يبرز دور ثلاثي الأبعاد:
+
+الجامعة: عبر اعتماد تقييمات مرنة تسمح بتعدد طرق الوصول للنتيجة.
+
+التدريسي: كميسر لاختبار الأفكار، حيث يصبح الخطأ بداية للفهم لا نهاية للتقييم.
+
+الطالب: بإعادة صياغة ما يتعلمه بلغته الخاصة، فالمعرفة التي لا يمكن شرحها بوضوح هي معرفة لم تستقر بعد.
+
+جدلية الفهم: بين النقد والدفاع
+
+في مقابل الطرح النقدي، تبرز وجهة نظر أخرى (يطرحها الطالب "حسن") ترفض اختزال الجامعة في إطار "النظري غير النافع". يرى هذا الرأي أن الجامعة هي البنية التحتية للمستقبل المهني؛ فهي توفر منهجاً علمياً منظماً لا يمكن تجميعه ذاتياً، وتتيح احتكاكاً مباشراً بخبرات الأساتذة، فضلاً عن المختبرات التي تربط المفهوم بالممارسة. كما أن الشهادة تظل وثيقة اعتماد دولية تفتح أبواب الفرص والبيئة الاجتماعية التشاركية.
+
+لا يظهر الرأيان كتناقض، بل كوجهين لعملة واحدة. الأول يصف القيمة الجوهرية لما "يجب" أن تقدمه الجامعة، والثاني يحذر مما يحدث حين يطغى التقييم الرقمي على بناء الفهم. يبقى التحدي الحقيقي ليس في المناهج، بل في خلق توازن يسمح للطالب أن "يفكر" بدلاً من أن "يتكيف"، لتنتج الجامعة عقولاً قادرة على بناء الفهم، لا مجرد استرجاع الإجابات.
+</p>
+                                
+
+            </div>
+            <div class="review-text">
+                <p>الخاتمة: أين نقف فعلياً؟
+
+في نهاية المطاف، لا يكمن السؤال الحقيقي في جدوى الجامعة من عدمها، بل في الكيفية التي نفهم بها دورها؛ فالجامعة مساحة لبناء المعرفة، لكن شكل هذه المعرفة يتشكل وفق الطريقة التي نعتمدها في نقلها واستقبالها. إن الخطر الحقيقي لا يكمن في جدران القاعة، بل في القناعات التي تتسلل إلى عقل الطالب يوماً بعد آخر؛ حين يعتقد أن النجاح هو "التشابه"، وأن الأمان يكمن في "عدم السؤال"، وأن التفوق هو مجرد "مطابقة النموذج".
+
+حينها، لا تصبح المشكلة في كون المناهج "نظرية"، بل في طالبٍ تعلّم كيف ينجو داخل النظام بدلاً من أن يستوعبه. إن التعليم المبني على "الإجابة الواحدة" ينتج عقولاً تجيد التكرار، بينما الهدف الأسمى للجامعة هو إنتاج عقلٍ قادر على مواجهة فكرة لم يرها من قبل، لا مجرد استرجاع ورقة امتحان محفوظة.
+
+لذا، يظل السؤال الجوهري الذي يحدد قيمة التجربة التعليمية: هل خرج الطالب من القاعة وهو يدرك جوهر ما كتبه، أم أنه أتقن فقط مهارة تدوينه؟ بين هذين السؤالين يتحدد مصير التعليم؛ هل هو مجرد "نظام درجات" أم "تجربة فهم"؟ وهل نخرج من الجامعة ونحن نفهم العالم حقاً، أم أننا تعلّمنا فقط كيف نمرّ منه دون أن نصطدم به؟
+</p>
+                                
+</div>
+            
             <div class="art-image-wrapper">
-                <img src="photo/ktf.PNG">
+                <img src="photo/skill lea.png" >
             </div>
+            <div class="editor-credit">
+                <i class="fas fa-check-circle"></i>
+                <span>تدقيق:</span>
+                <span class="editor-name"> مريم نزار</span>
+            </div>
+           
         </div></div>
     </main>
     <footer class="footer"><div class="container"><p>جميع الحقوق محفوظة لبيورم 2026</p></div></footer>
