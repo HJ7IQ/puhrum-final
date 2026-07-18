@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اخاديد البصرة.- puhrum</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #931916;
+            --gray: #64748b;
+            --gray-light: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            line-height: 1.9;
+            color: #1e293b;
+            background: #f8fafc;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 1rem 0;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 a {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.9rem;
+        }
+
+        .logo h1 a span { color: var(--secondary); }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--secondary);
+            font-weight: 600;
+            padding: 0.7rem 1.6rem;
+            border-radius: 50px;
+            background: rgba(147, 25, 22, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(147, 25, 22, 0.3);
+        }
+
+        .article-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a1a1a 100%);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(147, 25, 22, 0.4) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+        }
+
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-25px, 25px) rotate(8deg); }
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .category-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            color: #ffffff;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1.8rem;
+            line-height: 1.4;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .meta {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            flex-wrap: wrap;
+        }
+
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
+        .meta-item i { color: var(--secondary); }
+        .author { font-weight: 600; color: #fff; }
+
+        .article-content { padding: 4rem 0; }
+
+        .content-wrapper {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+        }
+
+        .review-text {
+            padding: 3rem 3rem 1.5rem;
+            font-size: 1.1rem;
+            line-height: 2;
+            color: #334155;
+            text-align: justify;
+        }
+
+        .review-text p { margin-bottom: 1.4rem; }
+        .review-text p:last-child { margin-bottom: 0; }
+
+        .art-section-title {
+            margin: 2.5rem 3rem 1rem;
+            position: relative;
+            display: inline-block;
+            padding-right: 2rem;
+        }
+
+        .art-section-title::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 70%;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .art-section-title h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #fefbfb 0%, #fef3f3 100%);
+            border-right: 5px solid var(--secondary);
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 3rem;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .quote-box p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--primary);
+            line-height: 1.9;
+        }
+
+        .quote-box .source {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.8rem;
+        }
+
+        .art-image-wrapper {
+            padding: 1.5rem 3rem 2.5rem;
+        }
+
+        .art-image-wrapper img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .editor-credit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1.5rem;
+            background: var(--gray-light);
+            margin: 2rem 3rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        .editor-credit i { color: var(--secondary); }
+        .editor-name { font-weight: 600; color: var(--primary); }
+
+        .footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero-content h1 { font-size: 1.5rem; }
+            .meta { flex-direction: column; gap: 0.8rem; }
+            
+            .review-text, .quote-box, .art-section-title, .art-image-wrapper, .editor-credit { margin: 1.5rem 1.5rem; padding: 1.5rem; }
+        }
+    </style>
+  </head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"><h1><a href="#home">puhrum</a></h1></div>
+            <a href="home.html" class="back-btn"><i class="fas fa-arrow-left"></i>العودة </a>
+        </div>
+    </header>
+
+    <section class="article-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="category-badge"><i class="fas fa-palette"></i> احداث</span>
+                <h1>أخاديد البصرة… فن يلامس الذاكرة والجسد</h1>
+                <div class="meta">
+                    <div class="meta-item"><i class="fas fa-user"></i><span class="author"> ملاك حيدر</span></div>
+                    <div class="meta-item"><i class="fas fa-calendar"></i><span>يوليو</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="article-content">
+        <div class="container"><div class="content-wrapper">
+
+
+            <div class="review-text">
+                <p>كيف يمكن للأيادي أن تأخذنا في رحلة إنسانية؟ يحول الأستاذ والفنان التشكيلي أسامة حمدي اليد إلى سيرة تستحق السرد، مكتوبة بالألوان، أيادٍ متنوعة تزين جدران المعرض متجعدة، متعبة، قاسية، ناعمة، يقدم إجابة عن هذه التساؤلات في مجموعته الأخيرة "أخاديد"، التي تبين لنا كم من القصص يمكن أن تحمل يدٌ واحدة، كل أثر، وخدش، وتجعيدة تحمل قصة مستقلة، وكل صلابة ونعومة هي رحلة في الذاكرة الإنسانية.
+نحن نكرم هذا الجزء من أجسامنا كل يوم، نزينه بالعديد من المجوهرات باختلاف معانيها وقيمها المعنوية، من الخواتم إلى حلقات الزواج التي كانت، ولا تزال، رمزًا للوفاء والإخلاص.
+نتحدث ونتفاعل ونتواصل بالأيادي، هذه ليست مجرد أعضاء، وإنما بوابات للعقل البشري، إذ إن الفنانين يعبرون عن موهبتهم من خلال أناملهم، وينقذ الأطباء ملايين الحيوات بأياديهم الثابتة.
+يفسر الفنان أسامة حمدي، في أكثر من لوحة، الرحلة البشرية، يأخذنا معه إلى أزمان متعددة وحكايات مختلفة تتمثل بأنعم الأيادي وأخشنها، باختلاف لونها وحجمها، لكل منها قدر واستخدام يختلف عن الآخر، رغم اختلاف الأعمار التي تمثلها الأيادي، إلا أن جميعها تشترك في حمل أثر الزمن، كأن الفنان أراد أن يجعل التجاعيد لغة بصرية.
+وهذا ليس بجديد للفنان، فهو يرى في الشخصيات العامة دورًا بطوليًا وقصصًا تستحق الذكر، ويجد الجمال الحقيقي في الحياة اليومية البسيطة.
+ووصفته الناقدة أميرة ناجي، في قراءة نقدية خصت بها "المراقب العراقي"، أن: "لوحاته تتسم بتكوينات متماسكة ترتكز على كتلة مركزية تمنح المشهد ثباتًا، بينما تعمل الخلفيات اللونية على خلق فضاء مفتوح يعزز العلاقة بين الشكل والمحيط، الملمس الخشن للسطح اللوني يُكسب اللوحة طابعًا حسيًا قويًا، كأن المادة التشكيلية نفسها تشارك في سرد القصة".
+من خلال ملاحظتنا للوحات الأستاذ أسامة حمدي، أخذت اليد حيزًا واسعًا من مساحة اللوحة، بينما استخدم في الخلفية ألوانًا هادئة، مما يجعل عين المشاهد تنشغل بتفاصيل الأصابع والخطوط والآثار، إضافة إلى الحلي التي أضافها الفنان بعناية واختيار دقيق.
+كاليري الفنان حامد سعيد
+عُرضت هذه المجموعة في غاليري الأستاذ والفنان حامد سعيد، في أحد أزقة منطقة العباسية في البصرة، يعد الغاليري مكانًا يشغل حيزًا ثقافيًا وفنيًا أعمق وأوسع من حيزه المكاني، فعلى الرغم من وطأة الأسماء وتنوعها في عالم الفنانين البصريين، إلا أن شحة الموارد والاهتمام المجتمعي في العقد السابق جعلت مثل هذه المحافل نادرة ومميزة.
+وعندما تحدث لنا الأستاذ حامد عن فكرة قاعته، التي على الرغم من صغر حجمها، إلا أنها تستقبل سنتها الخامسة محافظةً على ازدهارها وفعالياتها، من استضافة المعارض التشكيلية للعديد من الفنانين من عموم العراق، إضافة إلى جلسات أدبية ودروس رسم احترافية، حيث أضاف: "أن 90% من زوار الغاليري هم من عامة الناس غير الفنانين، حيث أشعر بأننا نغير واقعًا ثقافيًا ونؤثر على أجيال، ونحميهم من التشوهات البصرية."
+وتحدث لنا الأستاذ حامد عن رؤيته الشخصية لهذه اللوحات وصداقته مع الفنان أسامة، حيث قال: "هو أنيسي وأنا أنيسه، تشاركنا النشأة والفن، فقد تربينا على رائحة زيت الرسم." حيث نشأ الاول في قضاء أبي الخصيب في جنوب البصرة، التي درس فيها، ثم حصل على شهادة الماجستير من جامعة الإسكندرية في مصر، والآن يمارس عمله كتدريسي وفنان تشكيلي.
+وعند سؤاله عن فنه شخصيًا قال: "أنا أتحدث عندما أرسم." وتبرز لنا هذه الروحية عندما ننظر إلى لوحاته المعروضة في البصرة وبغداد والسليمانية والعديد من الدول، مثل تركيا وهولندا والأردن.
+</p>
+            </div>
+
+
+
+
+            <div class="art-image-wrapper">
+                <img src="photo/اخاديد.png">
+            </div>
+
+            <div class="editor-credit">
+                <i class="fas fa-check-circle"></i>
+                <span>تدقيق:</span>
+                <span class="editor-name">  دانة حسام
+
+</span>
+            </div>
+        </div></div>
+    </main>
+
+    <footer class="footer"><div class="container"><p>جميع الحقوق محفوظة لبيورم 2026</p></div></footer>
+</body>
+</html>

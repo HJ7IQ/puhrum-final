@@ -1,0 +1,106 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عصر اللابوبو: حين أصبحت الهوية قابلة للاستبدال</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        :root { --primary: #000000; --secondary: #931916; --gray: #64748b; --gray-light: #f1f5f9; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; line-height: 1.9; color: #1e293b; background: #f8fafc; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .header { background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.06); padding: 1rem 0; }
+        .header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo h1 a { color: var(--primary); font-weight: 800; font-size: 1.9rem; }
+        .logo h1 a span { color: var(--secondary); }
+        .back-btn { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--secondary); font-weight: 600; padding: 0.7rem 1.6rem; border-radius: 50px; background: rgba(147,25,22,0.08); transition: all 0.3s ease; }
+        .back-btn:hover { background: var(--secondary); color: white; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(147,25,22,0.3); }
+        .article-hero { background: linear-gradient(135deg, var(--primary) 0%, #1a1a1a 100%); padding: 4rem 0; text-align: center; position: relative; overflow: hidden; }
+        .article-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(147,25,22,0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%); }
+        .article-hero::after { content: ''; position: absolute; top: -40%; right: -15%; width: 500px; height: 500px; border: 1px solid rgba(255,255,255,0.08); border-radius: 50%; animation: float 10s ease-in-out infinite; }
+        @keyframes float { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-25px,25px) rotate(8deg); } }
+        .hero-content { position: relative; z-index: 2; }
+        .category-badge { display: inline-block; background: var(--secondary); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .hero-content h1 { color: #ffffff; font-size: clamp(1.4rem,5vw,2.4rem); font-weight: 800; margin-bottom: 1.8rem; line-height: 1.4; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .meta { display: flex; justify-content: center; gap: 2.5rem; font-size: 1rem; color: rgba(255,255,255,0.85); flex-wrap: wrap; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
+        .meta-item i { color: var(--secondary); }
+        .author { font-weight: 600; color: #fff; }
+        .article-content { padding: 4rem 0; }
+        .content-wrapper { background: white; border-radius: 24px; box-shadow: 0 0 0 1px rgba(0,0,0,0.05), 0 25px 50px -12px rgba(0,0,0,0.12); overflow: hidden; }
+        .review-text { padding: 3rem 3rem 1.5rem; font-size: 1.1rem; line-height: 2; color: #334155; text-align: justify; }
+        .review-text p { margin-bottom: 1.4rem; }
+        .quote-box { background: linear-gradient(135deg,#fefbfb,#fef3f3); border-right: 5px solid var(--secondary); padding: 1.5rem 2rem; margin: 1.5rem 3rem; border-radius: 0 16px 16px 0; }
+        .quote-box p { font-style: italic; color: var(--primary); font-size: 1.1rem; line-height: 1.9; }
+        .quote-box .author { font-size: 0.9rem; color: var(--gray); font-style: normal; margin-top: 0.5rem; text-align: left; }
+        .art-image-wrapper { padding: 1.5rem 3rem 2.5rem; text-align: center; }
+        .art-image-wrapper img { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .editor-credit { display: flex; align-items: center; justify-content: center; gap: 0.8rem; padding: 1.5rem; background: var(--gray-light); margin: 2rem 3rem; border-radius: 12px; font-size: 0.95rem; color: var(--gray); }
+        .editor-credit i { color: var(--secondary); }
+        .editor-name { font-weight: 600; color: var(--primary); }
+        .footer { background: var(--primary); color: white; text-align: center; padding: 2.5rem 0; font-weight: 600; }
+        @media (max-width: 768px) { .header .container { flex-direction: column; gap: 1rem; text-align: center; } .hero-content h1 { font-size: 1.3rem; } .meta { flex-direction: column; gap: 0.8rem; } .review-text,.quote-box,.art-image-wrapper,.editor-credit { margin: 1.5rem 1.5rem; padding: 1.5rem; } }
+    </style>
+  </head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"><h1><a href="home.html">puhrum</a></h1></div>
+            <a href="home.html" class="back-btn"><i class="fas fa-arrow-left"></i> العودة </a>
+        </div>
+    </header>
+    <section class="article-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="category-badge"><i class="fas fa-rocket"></i> اراء</span>
+                <h1>عصر اللابوبو: حين أصبحت الهوية قابلة للاستبدال</h1>
+                <div class="meta">
+                    <div class="meta-item"><i class="fas fa-user"></i><span class="author">داليا ليث</span></div>
+                    <div class="meta-item"><i class="fas fa-calendar"></i><span>يوليو</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="article-content">
+        <div class="container"><div class="content-wrapper">
+            <div class="review-text">
+             <p>
+                في وقتنا الحالي، نرى كثيرًا من الناس يتخلون عن هوياتهم الحقيقية فقط من أجل مواكبة "الموجة" أو "الترند"؛ فهم مستعدون للتخلي عن أذواقهم الخاصة لأجل ألّا يراهم العالم بنَظرةِ "التقليديين" أو "غير العصريين". هذا الأمر يدفعنا للسؤال حتمًا: هل نحن من نصنع الترند أم أن الترند هو من يعيد صناعتنا؟ فنحن الآن في قلب عصرٍ كاملٍ أصبح فيه الإنسان مستعدًا لتبديل ذوقه ولغته وملامحه وعاداته وحتى قناعاته بمجرد ظهور "موجة" جديدة على السطح؛ يجب أن يركبها قبل أن تغرقه، وكأن كل شيء الآن أصبح محكومًا ويُدارُ كُليًا من قبل صناع المحتوى والترندات.
+
+ولِمناقشة تأثير "الترند" على المجتمع، سنتناوله في أربعة محاور أساسية:
+المحور الأول: الهوية الشخصية أصبحت موضة موسمية
+هذا أول صراع يخوضه الإنسان، صراع هويته الفردية مع تلك الجماعية المحكومة من قبل الترندات وَصناع المحتوى، حيث يميل لتغيير الكثير من نفسه وهيئته داخليًا وخارجيًا كي يبقى مع القطيع، فأصبحت الأذواق متشابهة بكل شيء حتى إن لم يكن الفرد مقتنعًا بها كفاية؛ فنجد الرجال والنساء ميّالينَ لترك عاداتهم الأصيلة وَتلك الأخلاقيات التي تربوا عليها، فتنتشر العادات الدخيلة بأنواعها حتى وإن كانت منافيةً للبيئة التي تنتشر فيها. ليس بالضرورة أن يقتنع المجتمع بهذه العادات والسلوكيات، إذ أن مخالفة الموجة أصعب من اتباعها؛ فَيحاربها البعض بكل قواهم والبعض الآخر يتقبلها تحت مبدأ (حرية شخصية) -حتى يبدو "منفتحًا" Open-minded-. ومثالٌ على ذلك هو الاهتمام المفرط بالشكل الخارجي، ونرى سباقًا محمومًا على عمليات التجميل، إذ أصبحت زيادة الإقبال للحصول على ملامح تشبه مؤثرة أو ممثلة معينة هي الهدف الأساسي والترند المسيطر على عمليات التجميل منذ الأزل. ليس بالضرورة أن يكون هذا نابع من رغبة شخصية، وإنما أيضاً تساهم الحملات التسويقية ووسائل التواصل الاجتماعي بترسيخ الفكرة، على سبيل المثال هناك فكرة أن تغيير ملامح الفتاة أو إجراء بعض التعديلات التجميلية قبل دخولها للجامعة أو قبل زواجها أو حتى كي تحصل على ثقة أكبر بنفسها، وكأن القبول الاجتماعي أصبح مختصرًا على الالتزام بمعايير تجميلية رائجة، فهنا تتحول الحاجة النفسية إلى سوق مربح، إضافة إلى فشل الكثير من عمليات التجميل ووقوع ضحايا أكثر لها.
+
+المحور الثاني: التخلي عن الإرث
+نجد في يومنا هذا أن من يتمسكون بالإرث الثقافي قليلون، تلك الملابس التراثية والحرف اليدوية واللهجات والفولكلور الشعبي الخاص بكل دولة أصبحت وكأنها مدونة بِقَلَمٍ قابلٍ للمحو، فهو لا يُنقل ولا يُتقبل إذا لم يصبح ترندًا مقبولاً عالميًا، كما شاهدنا الجدل على افتتاح كأس العالم نسخة 2026، الذي قارنوه بكأس العالم نسخة 2022، وكيف أن دولة قطر استغلت الأنظار التي توجهت نحوها حتى تبرز ثقافتها العربية بشكل أكبر، وهذا ما شاهدناه من خلال شكل تميمة الحظ التي كانت عبارة عن شماغ قطري، أو حتى في لحظة تتويج الأرجنتين فائزة رأينا كيف أنهم ألبسوا ميسي البشت العربي، وكأنهم يرفعون من تراثهم على أنه شيء كبير وثمين كجائزة في نهاية اللعبة. هذا فقط مثال من بين كل الحالات التي نراها، كان ذلك تأثير الموجة على الماضي. أمّا تأثيرها على حاضرنا ومستقبلنا، فهنا توجد نقطة محورية في هذا التأثير، حيث لا تتهمش ثقافتهم وماضيهم فحسب، بل يصل التهميش إلى الوقت الحالي؛ فتجد توجهات الجيل الجديد مالت نحو أن يصبحوا صانعي محتوى على مواقع التواصل الاجتماعي، أو فتح البثوث وكسب المال منها، فنرى كثيرا من المراهقين أو حتى الأطفال يصبح طموحهم التوجه نحو صناعة المحتوى وأن يصبحوا (YouTubers أو Tiktokers أو Streamers)، يتبعون بذلك خطى بعض صناع المحتوى الذين تملكتهم الشهرة في الوقت الحالي على الرغم من أنهم ممكن لا يقدمون محتوى هادف ومفيد، فهوية الفرد علميًا وأدبيًا وتراثيًا أصبحت ركيكة، والوصول إلى الشهرة أصبح هدفًا يطغى على الطموحات العلمية والمهنية. ولا بد للإشارة إلى أن الشهرة هي سلاح ذو حدين، وإن الشهرة لا تعني مستقبل مستقر للفرد، خصوصًا إذا كانت مبنية على أساس اتباع الترندات. إن الإنسان، إن كان راغبًا بالشهرة إلى ذلك الحد، كان عليه أن يتعلم ويصنع إنجازه الخاص ويشتهر في مجاله أو يصبح صانع محتوى هادف، كما هو حال كثير من صانعي المحتوى الذين لم تغرهم الموجات بل كانوا ثابتين على بناء محتوى هادف ورائع.
+
+المحور الثالث: حين أصبحت الهوية سلعة
+نرى الآن أن الشركات أصبحت تتداول "الترندات" لسببين؛ الأول عقلية المستهلك والثاني شعور المستهلك. حيث إن المستهلكين في وقتنا الحالي أصبحوا يتفاخرون بشراء شيء يعود لترند معين، ولا يجدون فيه أي مشكلة إن أنفقوا المال عليه فنجد جميع الشركات، في كل المجالات كالتجميل والغذاء والترفيه وحتى المطاعم، تستغل ظهور ترند معين بظهورها معه (تعاون) لزيادة مبيعاتها. وكما هو الحال الذي حدث في إفتتاحية كأس العالم نسخة 2026، الذي تحدثت عنه في المحور السابق، حيث أن إحدى الشركات، الدمية تلك، شاركت لتمويل كأس العالم، لهذا وجدنا ظهورها المفاجئ في أكثر من موضع (الأغاني أو في الافتتاحية نفسها). أما شعور المستهلك، فهو مرتبط بعقلية البشر والتأثير المؤقت لترند معين، فنحن الآن لا نشتري دمية لأنها جميلة أو كوبًا لأننا نحتاجه، بل نملكها فقط لأننا رأينا بعض الناس يحملونهم في الصور؛ نحن نشتري ذلك الشعور الذي يأتي معه شعور إننا داخل ترند معين (ضمن قطيع معين)، الذي يمكن أن يُشعِرُنا بالانتماء لِفصيلةٍ مُعينةٍ. هذا ما جعل الناس يستهلكون بلا حاجة فعلية؛ فأصبحت قيمة الأشياء لا تقاس بما تقدمه لنا بل بعدد المهووسين بها.
+
+المحور الرابع: كيف تحول الإنسان من متفرد إلى أحد النُسَخ
+في السابق كان الفرد يُعرف بأفكاره أو أخلاقه أو حتى أصالته؛ أما اليوم يُعرف بما يُظهِرَهُ على صفحته في أي تطبيق من تطبيقات التواصل الاجتماعي حيث أن منشوراته أو المنشورات التي يعيد نشرها (Repost) تجعلها هوية له وتعبيرًا صريحًا عنه شخصيًا، فلا يظهر هو إلا كواحد من بين آلاف الناس الذين أعادوا نشر نفس المقطع الذي يحمل نفس الصفة أو نفس الشعور، فَهُنا هو يظهر كنسخةٍ من مجموعة، في بعض الأحيان أنه ليس سببه أن يشارك الشعور أو الصفة مع آخرين غيره، وإنما بسبب الموجات التي تسيطر على العالم لا أكثر، فَأصبح من السهلِ جدًا معرفة ما هو الرائج فقط برؤية أشخاص يرتدون نفس الملابس أو يستعملون الكلمات ذاتها أو حتى يصورون الصور نفسها، وكأن البشرية أصبحت تُطَّبِقُ تحديثًا جماعيًا كل أسبوع! التأثير الذي يمكن أن تجلبه الموجة معها بعض الأحيان يصبح سلبي جدًا على النفس، خاصة على بعض المراهقين في كل أنحاء العالم، ويجب مراعاتهم ومتابعتهم بطول بال وفهم عميق.
+
+الخاتمة: من يدفع الثمن
+يجب التنويه أن المشكلة ليست مواكبة العصر بما يحدثه من أساليب مفيدة ومناسبة للأُمة، ولكن بالانتباه التام ألّا نجعل هويتنا الأساسية وجذورها العريقة هي الثمن الذي ندفعه حتى نركب الموجة؛ فَالترند ينتهي بحلول نهاية نزوته وتلك النشوة التي يجلبها معه ولكن الأُمم التي تنسى نفسها وأصلها لن تعود بسهولة.
+كل ما بيدنا فعله هو التمسك بيد الماضي، بِيَدِ تِلكَ الحضارة والثقافة العريقة وتقديمها للمستقبل بكل فخر؛ فلست أخشى أن يعرف الأطفال أو الشباب الترندات وأسماء المشاهير ويحفِظُوها عن ظهر قلب، لأنها أشياء ستذبل وتموت كما ذبل قبلها الكثيرون، ولكن ما أخشاه حقا أن يكبروا وهم لا يعرفون تاريخ بلدهم أو يعجزون عن أن يُسموا شاعرًا من بلدهم أو رواية الحكاية التي صنعت هوية مدينتهم وغيرها. وأوَدُّ الإشارة إلى أن التغيير أمر طبيعي، والثقافات تتأثر ببعضها منذ الأزل، وليس هناك مشكلة بالانفتاح؛ بل في أن يصبح الإنسان مستعدًا للتخلي عَمّا يُميزه فقط، حتى لا يشعر أنه خارج السِرب، قد تنتهي الترندات كما انتهى الكثير من قبلها، لكن الهوية التي تضيع بسببها لا يمكن تعويضها أبدًا لذلك، أخطر ما يمكن أن يخسره الإنسان ليس ماله أو وقته... بل هو شيءٌ لا يمكن شراؤه مرة أخرى: هويته!
+
+             </p>
+            </div>
+     
+            <div class="art-image-wrapper">
+                <img src="photo/اللابوبو.png" alt="Space Exploration">
+            </div>
+            <div class="editor-credit">
+                <i class="fas fa-check-circle"></i>
+                <span>تدقيق:</span>
+                <span class="editor-name">مريم نزار</span>
+            </div>
+        </div></div>
+    </main>
+    <footer class="footer"><div class="container"><p>جميع الحقوق محفوظة لبيورم 2026</p></div></footer>
+</body>
+</html>

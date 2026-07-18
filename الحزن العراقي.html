@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عراقيَّةٌ لهجةُ الحزنِ أصلاً **** ألا أيّها الحزنُ من سبّبك: أيولدُ العراقيُ مجبولاً على الحزنِ؟
+- puhrum</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #931916;
+            --gray: #64748b;
+            --gray-light: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            line-height: 1.9;
+            color: #1e293b;
+            background: #f8fafc;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 1rem 0;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 a {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.9rem;
+        }
+
+        .logo h1 a span { color: var(--secondary); }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--secondary);
+            font-weight: 600;
+            padding: 0.7rem 1.6rem;
+            border-radius: 50px;
+            background: rgba(147, 25, 22, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(147, 25, 22, 0.3);
+        }
+
+        .article-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a1a1a 100%);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(147, 25, 22, 0.4) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+        }
+
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-25px, 25px) rotate(8deg); }
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .category-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            color: #ffffff;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1.8rem;
+            line-height: 1.4;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .meta {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            flex-wrap: wrap;
+        }
+
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
+        .meta-item i { color: var(--secondary); }
+        .author { font-weight: 600; color: #fff; }
+
+        .article-content { padding: 4rem 0; }
+
+        .content-wrapper {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+        }
+
+        .review-text {
+            padding: 3rem 3rem 1.5rem;
+            font-size: 1.1rem;
+            line-height: 2;
+            color: #334155;
+            text-align: justify;
+        }
+
+        .review-text p { margin-bottom: 1.4rem; }
+        .review-text p:last-child { margin-bottom: 0; }
+
+        .art-section-title {
+            margin: 2.5rem 3rem 1rem;
+            position: relative;
+            display: inline-block;
+            padding-right: 2rem;
+        }
+
+        .art-section-title::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 70%;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .art-section-title h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #fefbfb 0%, #fef3f3 100%);
+            border-right: 5px solid var(--secondary);
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 3rem;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .quote-box p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--primary);
+            line-height: 1.9;
+        }
+
+        .quote-box .source {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.8rem;
+        }
+
+        .art-image-wrapper {
+            padding: 1.5rem 3rem 2.5rem;
+        }
+
+        .art-image-wrapper img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .editor-credit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1.5rem;
+            background: var(--gray-light);
+            margin: 2rem 3rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        .editor-credit i { color: var(--secondary); }
+        .editor-name { font-weight: 600; color: var(--primary); }
+
+        .footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero-content h1 { font-size: 1.5rem; }
+            .meta { flex-direction: column; gap: 0.8rem; }
+            
+            .review-text, .quote-box, .art-section-title, .art-image-wrapper, .editor-credit { margin: 1.5rem 1.5rem; padding: 1.5rem; }
+        }
+    </style>
+  </head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"><h1><a href="#home">puhrum</a></h1></div>
+            <a href="home.html" class="back-btn"><i class="fas fa-arrow-left"></i>العودة </a>
+        </div>
+    </header>
+
+    <section class="article-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="category-badge"><i class="fas fa-palette"></i> ثقافة</span>
+                <h1>عراقيَّةٌ لهجةُ الحزنِ أصلاً **** ألا أيّها الحزنُ من سبّبك: أيولدُ العراقيُ مجبولاً على الحزنِ؟</h1>
+                <div class="meta">
+                    <div class="meta-item"><i class="fas fa-user"></i><span class="author">محمد احمد</span></div>
+                    <div class="meta-item"><i class="fas fa-calendar"></i><span>يوليو</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="article-content">
+        <div class="container"><div class="content-wrapper">
+            <div class="review-text">
+      <P>لا يخفى على أيٍّ منا ما لثقافتنا من طابعٍ حزينٍ شَجِنٍ متجذرٍ في أصول عاداتنا وتقاليدنا وبما ننتج من فنون متنوعة بل وفي تصرفاتنا اليومية حتى، فيمتد إلى تعاملاتنا مع بعضنا البعض وإلى نظرتنا للعالمِ وإلى تصرفاتنا والقرارات التي نتخذها، لكن لِمَ كُلُّ هذا الكم الهائل من الحزنِ والأسى؟ لماذا تطبعت ثقافتنا بهذا الحزن؟ في الحقيقة، لا يوجد سبب واحد يعطي تفسيراً كافياً يشرح سبب تشكل ثقافتنا بهذا الشكل، لكنه مزيج من عدةِ عواملٍ تاريخيةٍ واجتماعيةٍ واقتصادية أثرت ما أثرت لتنجب هذه الثقافة وتكون ممتدةً لأجيالٍ وتتوارثُ لقرون.
+الورقة البيضاء (أو Tabula Rasa)، نظريةٌ صاغها ورسمَ ملامحها الفيلسوفُ الإنجليزي جون لوك (John Locke)؛ افترضَ فيها أن الإنسان يولدُ دون أدنى معرفةٍ أو أفكارٍ يرثها من أسلافه، فيولدُ الإنسانُ ورقةً بيضاءَ بلا أي أفكارٍ أوليةٍ أو غرائز، لكن من أينَ يأتي مخزوننا المعرفي الضخمُ هذا؟ أجابَ لوك بكلمةٍ واحدة: التجربة، فكل ما نعرف وكل ما نفعل ونقول هو نتاج لتجاربنا وتفاعلاتنا مع محيطنا. وعلى النقيضِ تماماً، يؤسِسُ كارل يونغ لفكرةٍ مغايرةٍ تماماً، اللاوعي الجمعي (collective unconscious)، إذ يَفترِضُ أن البشرَ يولدون بقوالبٍ نفسيةٍ جاهزةٍ أو كما سماها يونغ النماذج البدئية (Archetypes) وهي قوالب نفسية متشابهة يتشاركها البشر في كل مكان وزمان إذ لا مكان للصدفة، فَكُلُّ شيءٍ مُعَدّ مسبقاً، ويستدل يونغ على هذا بالتشابه الكبير في القصص الأسطورية للحضارات المختلفة كقصة الطوفان مثلاً، إذ نراها في حضارات متعددة ومفصولة عن بعضها جغرافياً وتاريخياً، وأيضاً خوفنا الفطري والمشتركُ من الظلام مثلاً. ينظر العلم الحديث اليوم نظرةً تجمع نسبياً بين هاتين الفكرتين فيقوم العلم اليوم بتفسير هذه الظواهر من منطلقين رئيسيين، وهما:
+</P>
+            </div>
+
+            <div class="art-section-title"><h2>أولاً: علم ما فوق الجينات (Epigenetic)</h2></div>
+
+            <div class="review-text">
+            <p> كان يُعتقد سابقاً أن الجينات تنقل المعلومات الوراثية الخاصة بالصفات الجسدية فقط. تغيرت هذه النظرة الضيقة الآن، فالجينات لا تنقل لنا صفاتنا الجسدية وحسب وإنما تنقل لنا أيضاً خبراتِ أسلافنا ومخاوفهم، فقد أُثبِتَ أن الصدمات النفسية والمخاوف والتوتر التي تعرض لها أسلافنا تترك بصمتها فينا فينتقل تأثيرها من جيل لآخر، وتم الاستدلال على هذه النظرية عن طريق تجربة قام بها عالما الأعصاب براين دياز وكيري ريزلر (Brian Dias and Kerry Ressler)، إذ قاما بتعريض بعض الفئران الذكور لرائحة زهرة الكرز وصعقهم بعدها. في هذه الحالة، يقوم الدماغ ببناء شبكات عصبية تربط بين رائحة الكرز والصعقة الكهربائية، فتصاب الفئران بالذعر كلما تعرضت لرائحة الكرز. عند تزاوج هذه الفئران وإنجابها لجيل جديد، وجدا أن الجيل الجديد من الفئران يصاب بنفس الخوف والذعر الذي يصيب أسلافه على الرغم من عدمِ تعرضهم لصعقة كهربائية، فهذا الشعور بالخوف لم ينشأ بسبب مرورهم بهذه التجربة وإنما ورثوا خوفهم. فالمخاوف والصدمات الشديدة تؤثر على الأجيال اللاحقة فعلاً. وإذا أردنا الحديث عن البشر، فلدينا بهذا الخصوص العديد من الأمثلة الحية التي نستطيع رؤيتها ودراستها لعل من أهمها:
+مجاعة الشتاء الهولندي:  في سبتمبر من عام (1944) وفي أثناء الحرب العالمية الثانية، أعلنت الحكومة الهولندية إضراباً لعمال السكك الحديدية دعماً لقوات الحلفاء، ردت ألمانيا النازية على أثر ذلك بفرضِ حصارٍ على جميع شحنات الغذاء القادمة إلى هولندا، فعصفت مجاعةٌ بالشعب الهولندي راح على أثرها أكثر من (22,000) شخص جوعاً، أصبح الناجون من هذه المجاعة محط أنظار العلماء والباحثين، حيث وجد أن الأطفال الذين كانوا في أرحام أمهاتهم في وقت الحادثة ورثوا تغيرات جينية كثيرة، فعند بلوغ هؤلاء الأطفال عانوا من زيادة في الوزن ومعدلات أعمار أقل من أقرانهم، كما عانوا من ارتفاع الدهون الثلاثية والكوليسترول الضار (LDL)، كما جعلتهم أكثرَ عرضةً للإصابةِ بأمراضٍ مزمنة مثل السمنة والسكري وأمراض القلب والفصام، بل وانتقلت إلى أحفادهم أيضاً. وعند دراسة هؤلاء الناجين، نلاحظ أن لديهم صفات جينية مميزة مثل نقص الجين المسؤول عن النمو (IGF2).
+الناجون من الهولوكوست: عند فحص جينات أبناء الناجين من محرقة الهولوكوست نجد أن لديهم مجموعة من التغيرات الفوق جينية (Epigenetic) في جين (FKBP5) المسؤول عن تنظيم استجابتنا للكورتيزول وبالنتيجة، نلاحظ مستويات مرتفعة من القلق والاكتئاب ارتفاعاً استثنائياً مقارنةً بأقرانهم.
+نلاحظ ذلك أيضاً عند الشعوب الأصلية التي تعرّضت لقرونٍ من الظلمِ والتطهير العرقي والمحو الثقافي، كما في الأمريكيتين وأستراليا.
+</p>
+            </div>
+
+
+
+
+                      <div class="art-section-title"><h2>ثانياً: علم النفس التطوري</h2></div>
+
+            <div class="review-text">
+         <p> لماذا نخاف فطرياً من الثعابين والعناكب ولا نخاف من المقابس الكهربائية؟ يفترض علم النفس التطوري بأنه كما أن الكائنات الحية تكيفت عبر آلاف السنين لتكون أجسادها مناسبةً لبيئاتها، تكيفت عقولها وسلوكياتها لتنجو وتتكاثر، فعقولنا حقيقةً مصممةٌ ومهيئةٌ لتنجو في البرية، إذ يمكننا القول أن أدمغتنا مصممة للاستجابة الفورية للخوف والقلق من أشياءٍ محددةٍ كالخوف من الأفاعي والعناكبِ والعقارب والمرتفعات والظلام. فوفقاً لنظرية الانحياز السلبي (Negative bias) الدماغ البشري مصمم بيولوجياً ليعطي أولويةً أكبر للمشاعر السلبية كالحزنِ والقلق على حساب المشاعر الإيجابية كالفرح والتفاؤل، وذلك ببساطة لأن الخوف والقلق يضمنان بقاءَنا واستمرارَنا، وهنا تصبح اللوزة الدماغية (Amygdala)، وهي مركز التحكم في الخوفِ والقلقِ، في حالة تأهبٍ قصوى خصوصاً في المجتمعات التي عاشت في بيئات متقلبة وصارعت تقلبات تهدد وجودها كالفيضانات والكوارث والخوف من التعرضِ للافتراس من المفترسات، وبالتالي لم يكن التفاؤل المفرط خياراً ذكياً للبقاء؛ بل كان الشخص الأكثر حذراً وتوقعاً للمأساة هو الأكثر قدرة على حماية عائلته والنجاة. فيتحول القلق من أداة بيولوجية فردية للنجاة في البرية، إلى طابع سلوكي جمعي يحمي المجتمع عبر توقّع الأسوأ دوماً للتعامل معه.
+عند أخذ هاتين النظريتين بالاعتبار، يصبح واضحاً أننا لا نولد ورقةً بيضاء كما قال لوك، ولا نولد بقوالب جاهزة كما قال يونغ، وإنما نولد ونحن نمتلك استعداداً للخوف من بعض الأشياء التي سببت خطراً لنا على مر تاريخنا. وإذا أردنا الحديث عن السبب الكامن وراء الحزن الهائل في ثقافتنا وموروثاتنا في ضوء هذه الفكرة، يمكننا أن نفسره بجملة واحدة: المأساة التاريخية (Historical Grief)، وهو مصطلح صاغته الباحثة الأمريكية (Maria Yellow Horse Brave Heart) في أواخر الثمانينيات، عند دراستها لأسباب ارتفاع عدد المصابين بالاكتئاب والاضطرابات النفسية بين شعوب اللاكوتا، وهم من السكان الأصليين لأمريكا. ويمكننا القول أن الحزن التاريخي هو استجابة نفسية وعاطفية تراكمية عبر الأجيال تظهر في مجتمع كامل أو ثقافة معينة نتيجةً لتراكم المآسي والصدمات النفسية عبر تاريخ هذه الجماعة.
+ففي العراق مثلاً، نرى الحزنَ في مختلف جوانب ثقافاتنا وفنوننا، كَفَنِّ المراثي والذي يشكل أعمق أنواع الأدبِ الغنائي، الذي حُفِرَ عميقاً في شخصيةِ ونفسيةِ الفردِ العراقي من العصرِ السومريِّ وإلى يومنا هذا لكثرةِ المآسي التي تعرضَ لها سكانُ هذه الأرض، وكذلكَ بسبب المعتقدات الدينية لسكان هذه الأرض، فالسومريون مثلاً اعتقدوا أن الموتَ هو نهايةُ كلِّ إنسانٍ، والخلودُ من نصيبِ الآلهةِ فقط، فعندَ موتِ الجسدِ تهيمُ الروحُ في عالمٍ كئيبٍ مغبرٍ إلى أبدِ الدهرِ، وهذا أحد الأسباب التي شكلت ثقافةَ حزنٍ عندَ السومريين، فالموتُ عندهم هو النهاية إذ لا عودةَ بعدَ الموت. ومع كثرةِ الحروبِ والموت ودمارِ المدنِ المقدسةِ والمعابدِ، وُلِدَ فَنُّ المراثي الحزينة والبكائيات، ولا يوجد أفضل من مرثيةِ أور لتوثيق هذه الثقافة، والتي كتبت بالكتابة المسمارية في نهاية الألفية الثالثة قبل الميلاد، تخليداً لفاجعةِ سقوط سلالةِ أور الثالثةِ وتدمير مدينة أور عاصمة السومريين على يد العيلاميين، يتكونُ النصُ الشعري من أحد عشر مقطعاً شعرياً تبكي فيها نينغال (آلهة القصبِ عند السومريين وزوجة نانا إله القمر والحاميةُ لمدينةِ أور) مدينتها بمرارةٍ، والتي صارت مدينةَ أشباحٍ بعدَ أن هجرتها الآلهةُ، وتتوسلُ إنليلَ (إلهَ السماءِ) أن يحمي أور ضد كوارثِ المستقبل.
+إذن، المآسي في ثقافتنا كثيرةٌ ومتراكمةٌ من حروبِ سومر وغزوات وحروب العيلاميين والأخمينيين، وتبعها الفتحُ الإسلاميُ وسقوطه على يدِ المغولِ وغيرها من المآسي حتى يومنا هذا، فليسَ مستغرباً نشوءُ ثقافةٍ تحملُ كُلَّ هذا الأسى والحزن والذي صارَ وسيلةً للتعبيرِ والتنفيسِ عمّا يكتنزُ داخل نفوسِ أفرادنا والذي يتجلى في أنماطٍ سلوكيةٍ متوارثةٍ كالشعور الدائمِ وغير الواعي بالقلق والتوجُّسِ وظهورِ مشاعرِ الغضبِ والحزنِ بكثرة بين الأفراد، بل ويتعدى للأعراضِ الجسديةِ، إذ ترتفع نسبة الإصابة بأمراضِ السكري والقلبِ.
+في الختام، يمكننا القول إن حزننا ليسَ عاطفةً عابرةً، بل يتعدى ذلكَ ليكونَ قصةً تروي تاريخنا وتراثنا، فالحزنُ الذي يبني وجداننا ليس إلا نتيجةً حتميةً لقرونٍ من المعاناة والأزمات، ومع ذلك، إن هذه الاستجابة النفسية الحزينة ليست قدراً بيولوجياً خالصاً بل آليةً نفسيةً دفاعيةً ضمِنت بقاءنا، وإنما مراثينا تطهيرٌ نفسي لنا، فحزننا ومَراثينا ليسَت استسلاماً ودليلاً على الانكسار، إنما هي أسلوبٌ للتمسكِ بالحياة، فمرثيةُ أور كانت تنتهي ببارقةِ أملٍ ووعدٍ بمستقبلٍ حُرٍ يَعِدُ بالرخاء.
+</p>
+            </div>
+
+            <div class="art-image-wrapper">
+                <img src="photo/الحزن العراقي.png">
+            </div>
+
+            <div class="editor-credit">
+                <i class="fas fa-check-circle"></i>
+                <span>تدقيق:</span>
+                <span class="editor-name"> مريم نزار</span>
+            </div>
+        </div></div>
+    </main>
+
+    <footer class="footer"><div class="container"><p>جميع الحقوق محفوظة لبيورم 2026</p></div></footer>
+</body>
+</html>

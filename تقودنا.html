@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>هل تقودنا التكنولوجيا أم نقودها؟ "المجتمع الصناعي وعواقبه كانت كارثة على الجنس البشري" </title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #000000;
+        --secondary: #931916;
+        --gray: #64748b;
+        --gray-light: #f1f5f9;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        line-height: 1.9;
+        color: #1e293b;
+        background: #f8fafc;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .header {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        padding: 1rem 0;
+      }
+      .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo h1 a {
+        color: var(--primary);
+        font-weight: 800;
+        font-size: 1.9rem;
+      }
+      .logo h1 a span {
+        color: var(--secondary);
+      }
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: var(--secondary);
+        font-weight: 600;
+        padding: 0.7rem 1.6rem;
+        border-radius: 50px;
+        background: rgba(147, 25, 22, 0.08);
+        transition: all 0.3s ease;
+      }
+      .back-btn:hover {
+        background: var(--secondary);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(147, 25, 22, 0.3);
+      }
+      .article-hero {
+        background: linear-gradient(135deg, var(--primary) 0%, #1a1a1a 100%);
+        padding: 4rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .article-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(147, 25, 22, 0.4) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 255, 255, 0.05) 0%,
+            transparent 40%
+          );
+      }
+      .article-hero::after {
+        content: "";
+        position: absolute;
+        top: -40%;
+        right: -15%;
+        width: 500px;
+        height: 500px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+        animation: float 10s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        50% {
+          transform: translate(-25px, 25px) rotate(8deg);
+        }
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      .category-badge {
+        display: inline-block;
+        background: var(--secondary);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+      .hero-content h1 {
+        color: #ffffff;
+        font-size: clamp(1.4rem, 5vw, 2.4rem);
+        font-weight: 800;
+        margin-bottom: 1.8rem;
+        line-height: 1.4;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .meta {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.85);
+        flex-wrap: wrap;
+      }
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .meta-item i {
+        color: var(--secondary);
+      }
+      .author {
+        font-weight: 600;
+        color: #fff;
+      }
+      .article-content {
+        padding: 4rem 0;
+      }
+      .content-wrapper {
+        background: white;
+        border-radius: 24px;
+        box-shadow:
+          0 0 0 1px rgba(0, 0, 0, 0.05),
+          0 25px 50px -12px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+      }
+      .review-text {
+        padding: 3rem 3rem 1.5rem;
+        font-size: 1.1rem;
+        line-height: 2;
+        color: #334155;
+        text-align: justify;
+      }
+      .review-text p {
+        margin-bottom: 1.4rem;
+      }
+      .quote-box {
+        background: linear-gradient(135deg, #fefbfb, #fef3f3);
+        border-right: 5px solid var(--secondary);
+        padding: 1.5rem 2rem;
+        margin: 1.5rem 3rem;
+        border-radius: 0 16px 16px 0;
+      }
+      .quote-box p {
+        font-style: italic;
+        color: var(--primary);
+        font-size: 1.1rem;
+        line-height: 1.9;
+      }
+      .quote-box .author {
+        font-size: 0.9rem;
+        color: var(--gray);
+        font-style: normal;
+        margin-top: 0.5rem;
+        text-align: left;
+      }
+      .art-image-wrapper {
+        padding: 1.5rem 3rem 2.5rem;
+        text-align: center;
+      }
+      .art-image-wrapper img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      .editor-credit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 1.5rem;
+        background: var(--gray-light);
+        margin: 2rem 3rem;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        color: var(--gray);
+      }
+      .editor-credit i {
+        color: var(--secondary);
+      }
+      .editor-name {
+        font-weight: 600;
+        color: var(--primary);
+      }
+      .footer {
+        background: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 2.5rem 0;
+        font-weight: 600;
+      }
+      @media (max-width: 768px) {
+        .header .container {
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+        .hero-content h1 {
+          font-size: 1.3rem;
+        }
+        .meta {
+          flex-direction: column;
+          gap: 0.8rem;
+        }
+        .review-text,
+        .quote-box,
+        .art-image-wrapper,
+        .editor-credit {
+          margin: 1.5rem 1.5rem;
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <h1><a href="home.html">puhrum</a></h1>
+        </div>
+        <a href="home.html" class="back-btn"
+          ><i class="fas fa-arrow-left"></i> العودة
+        </a>
+      </div>
+    </header>
+    <section class="article-hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="category-badge"><i class="fas fa-rocket"></i> اراء</span>
+          <h1>هل تقودنا التكنولوجيا أم نقودها؟ "المجتمع الصناعي وعواقبه كانت كارثة على الجنس البشري" </h1>
+          <div class="meta">
+            <div class="meta-item">
+              <i class="fas fa-user"></i><span class="author">شمس الزهراء صبيح , مهدي منتظر</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i><span>يوليو</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <main class="article-content">
+      <div class="container">
+        <div class="content-wrapper">
+          <div class="review-text">
+            <p>
+            
+هكذا افتتح "تيد كازينسكي" بيانه المعادي للتكنولوجيا الحديثة. حيث اعتبرها أداة لسلب الحرية وخلق مجتمع يكون فيه الجميع عبيدًا للصناعة. فمن هو وما هي أفكار بيانه؟
+
+التمهيد:
+"تيد كازينسكي"، أو “اليونابومبر”، هو عالم رياضيات أمريكي تحول إلى مفجر متسلسل بسبب معارضته الشديدة للمجتمع الصناعي والتكنولوجيا الحديثة. وعلى مدى نحو 17 عامًا أرسل طرودًا مفخخة بهوية مجهولة صنعها في كوخه وقتلت 3 أشخاص وأصابت 23 آخرين. وفي عام 1995 طالَبَ بنشر بيانه «المجتمع الصناعي ومستقبله» في صحيفة التايمز، وحينها فقط سيتوقف عن إرسال طرود متفجرة. فتم نشره، وبعد نشر البيان، لاحظ شقيق "تيد" تشابهًا كبيرًا بين أسلوب الكتابة وأفكار تيد، فأبلغ السلطات. عندها لعب "جيمس فيتزجيرالد" - وهو محقق وخبير لغوي في مكتب التحقيقات الفيدرالي - دورًا مهمًا في تحليل لغة البيان ومقارنتها برسائل ووثائق أخرى مرتبطة "بكازينسكي". ساعد هذا التحليل في دعم الأدلة التي قادت إلى استصدار مذكرة تفتيش لكوخه المنعزل في ولاية مونتانا عام 1996، حيث عثر المحققون على مواد لصنع القنابل ومسودات لرسائله، فتم اعتقاله وإنهاء واحدة من أطول المطاردات الجنائية وأشهرها في تاريخ الولايات المتحدة. وبقي مسجونا في سجن (ADX Florence)  وهو أشدّ السجون حراسةً في العالم حتى توفي فيه عام 2023.
+
+التكنولوجيا تمنح حريات وتسلب أخرى:
+ينتقد "كازينسكي" في بيانه المكون من ٣٥ ألف كلمةٍ المجتمعَ الصناعي وأنه يسلب الإنسان حريته ويجرده من الدافع. ودعا إلى الثورة ضد هذا النظام، ولم يشترط أن تكونَ الثورة ضد الحكومات إلا للضرورة، وحصر الثورة ضد المجتمع الصناعي فقط. ومع تصاعد التكنولوجيا في العقد الأخير برزت أفكاره بشكل واضح على مواقع التواصل الإجتماعي ويتم مناقشتها بجدية. والعجيب في الأمر أن أفكاره تتطابق مع واقعنا الحالي على الرغم من مرور أكثر من ٣٠ عام على صدور بيانه. حيث يذكر:
+أن التكنولوجيا تبدو كأنها تمنحنا الحرية، لكنها في الواقع تسلبها تدريجيًا. فالسيارات أصبحت منتشرة إلى درجة أنّ المشيَ صار غيَر عملي في أماكن كثيرة. ونتيجة لذلك، تضطر إلى الاندماج أكثر في النظام الصناعي عبر الحصول على رخصة قيادة وتأمين وتسجيل للمركبة. أو يمكنك استخدام الحافلات، فتفقد قدرًا أكبر من الحرية الشخصية.
+مع تزايد قدرتنا على تعديل الجينات البشرية، يصبح فرض ضوابط أخلاقية على هذه الممارسة أكثر صعوبة. فالهندسة الوراثية ستبدأ بعلاج الأمراض الوراثية، ومن ثم ستصبح التعديلات الاخرى على الجينات «مفيدة». وسيقرر أصحاب النفوذ حينها ما هو جيد وما هو غير جيد، إلى أن ينشأ في النهاية مجتمع توجد فيه طبقة عليا معدلة وراثيًا وأخرى أقل حظًا تعتمد على الصدفة الجينية وهم عامة البشر.
+ويتوقع تيد أيضًا أننا سنعتمد أكثر فأكثر على الحواسيب لاتخاذ القرارات، إلى أن نصبح غير قادرين على فهم كيفية اتخاذها لتلك القرارات. وعندها سنُبقي الحواسيب تعمل فقط للحفاظ على استقرار المجتمع، لتصبح الآلات عمليًا هي صاحبة السيطرة.
+ويرى أيضًا أن الأدوية النفسية تُوصف بإفراط في كثير من الأحيان لمساعدة الناس على تحمل الضغوط النفسية الناتجة عن العيش في المجتمع الصناعي. فإذا احتاج عدد متزايد من الناس إلى مضادات الاكتئاب لتحمل واقع كئيب، فقد يُسمح لذلك الواقع بأن يصبح أكثر كآبة، حتى تصبح الأدوية ضرورة دائمة للحياة.
+
+أهم الأفكار في البيان:
+عملية القوة (32–92)
+وهي عملية تحديد هدف، وبذل جهدٍ ذي معنى بشكل مستقل، ثم تحقيق ذلك الهدف. إن القيام بذلك يمنح الإنسان شعورًا بالرضا، ويساعده على تجنّب القلق، والشعور بالدونية، أو الإكتئاب. يعطّل العالم الحديث هذه العملية من خلال التقليل من قيمة العديد من الأمور التي قد نجدها مُرضية، وفي الوقت نفسه يسلبنا قدرًا كبيرًا من استقلاليتنا. وفي الوقت ذاته، أصبحت أهداف كثيرة مستحيلة التحقيق، مما قد يؤدي إلى إحباطٍ دائم واكتئاب.
+طبيعة الحرية (93–98)
+الحرية هي القدرة على التحكم في ظروف الحياة والموت المتعلقة بوجود الإنسان نفسه. يواجه الناس في الطبيعة البرية عوامل لا يملكون القدرة على السيطرة عليها، لكنهم يستطيعون تقبّلها باعتبارها حقائق من حقائق الحياة. في الوقت الحاضر، تُتخذ العديد من القرارات المهمة من قبل أشخاص يشغلون مناصب تقنية، ولا يملك عامة الناس تأثيرًا عمليًا يُذكر عليها. كما أصبحت العمليات الديمقراطية واسعة النطاق إلى درجة أنّ الأفراد أصبحوا مجرد أرقام.
+
+تحليل المشهد الختامي من مسلسل Manhunt: Unabomber
+وهو واحد من أعمق المشاهد السيكولوجية والفلسفية في الدراما الحديثة من مسلسل (Manhunt: Unabomber). حيث يوضح التحول الكامل الذي طرأ على شخصية المحقق "جيمس فيتزجيرالد" (الذي تم ذكره في التمهيد) بعد رحلته الطويلة في مطاردة وفهم عقلية "كازينسكي" حيث طوال المسلسل، كان "كازينسكي" يجادل في بيانه بأن المجتمع الصناعي والتكنولوجي الحديث قد استعبد البشر، وجرّدهم من حريتهم الفطرية من خلال إخضاعهم لأنظمة وقوانين صارمة تُملي عليهم تصرفاتهم. نرى في النهايةِ المحققَ يقف بسيارته في تقاطع طرق فارغ تمامًا. لا توجد سيارات أخرى، لا توجد شرطة، ولا يوجد أي خطر منطقي يمنعه من العبور. الفطرة الحرة تخبره أن يعبر، لكن النظام المزروع في داخله يخبره أن يتوقف. هنا يدرك المحقق -بمرارة- أن "كازينسكي"، رغم كونه قاتلًا، كان محقًا في تشخيصه لعبودية الإنسان المعاصر.
+
+            </p>
+          </div>
+
+          <div class="art-image-wrapper">
+            <img src="photo/حق .png" />
+          </div>
+          <div class="editor-credit">
+            <i class="fas fa-check-circle"></i>
+            <span>تدقيق:</span>
+            <span class="editor-name"> حيدر المرتضى</span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container"><p>جميع الحقوق محفوظة لبيورم 2026</p></div>
+    </footer>
+  </body>
+</html>

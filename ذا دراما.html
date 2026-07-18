@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ذا دراما: عن أهمية معرفة الماضي وتأثيره على الحاضر
+- puhrum</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #931916;
+            --gray: #64748b;
+            --gray-light: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            line-height: 1.9;
+            color: #1e293b;
+            background: #f8fafc;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 1rem 0;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 a {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.9rem;
+        }
+
+        .logo h1 a span { color: var(--secondary); }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--secondary);
+            font-weight: 600;
+            padding: 0.7rem 1.6rem;
+            border-radius: 50px;
+            background: rgba(147, 25, 22, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(147, 25, 22, 0.3);
+        }
+
+        .article-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a1a1a 100%);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(147, 25, 22, 0.4) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+        }
+
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-25px, 25px) rotate(8deg); }
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .category-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            color: #ffffff;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1.8rem;
+            line-height: 1.4;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .meta {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            flex-wrap: wrap;
+        }
+
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
+        .meta-item i { color: var(--secondary); }
+        .author { font-weight: 600; color: #fff; }
+
+        .article-content { padding: 4rem 0; }
+
+        .content-wrapper {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+        }
+
+        .review-text {
+            padding: 3rem 3rem 1.5rem;
+            font-size: 1.1rem;
+            line-height: 2;
+            color: #334155;
+            text-align: justify;
+        }
+
+        .review-text p { margin-bottom: 1.4rem; }
+        .review-text p:last-child { margin-bottom: 0; }
+
+        .art-section-title {
+            margin: 2.5rem 3rem 1rem;
+            position: relative;
+            display: inline-block;
+            padding-right: 2rem;
+        }
+
+        .art-section-title::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 70%;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .art-section-title h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #fefbfb 0%, #fef3f3 100%);
+            border-right: 5px solid var(--secondary);
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 3rem;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .quote-box p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--primary);
+            line-height: 1.9;
+        }
+
+        .quote-box .source {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.8rem;
+        }
+
+        .art-image-wrapper {
+            padding: 1.5rem 3rem 2.5rem;
+        }
+
+        .art-image-wrapper img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .editor-credit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1.5rem;
+            background: var(--gray-light);
+            margin: 2rem 3rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        .editor-credit i { color: var(--secondary); }
+        .editor-name { font-weight: 600; color: var(--primary); }
+
+        .footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero-content h1 { font-size: 1.5rem; }
+            .meta { flex-direction: column; gap: 0.8rem; }
+            
+            .review-text, .quote-box, .art-section-title, .art-image-wrapper, .editor-credit { margin: 1.5rem 1.5rem; padding: 1.5rem; }
+        }
+    </style>
+  </head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"><h1><a href="#home">puhrum</a></h1></div>
+            <a href="home.html" class="back-btn"><i class="fas fa-arrow-left"></i>العودة </a>
+        </div>
+    </header>
+
+    <section class="article-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="category-badge"><i class="fas fa-palette"></i> ترفيه</span>
+                <h1> ذا دراما: عن أهمية معرفة الماضي وتأثيره على الحاضر
+</h1>
+                <div class="meta">
+                    <div class="meta-item"><i class="fas fa-user"></i><span class="author">فوزي فكري</span></div>
+                    <div class="meta-item"><i class="fas fa-calendar"></i><span>يوليو</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="article-content">
+        <div class="container"><div class="content-wrapper">
+            <div class="review-text">
+<p>يُفهم مصطلح الدراما بشكل عام على أنه نوع من الأعمال الفنية الذي يعتمد على تطور الصراع الإنساني والعاطفي بين الشخصيات، حيث تبدأ الأحداث غالبًا بشكل بسيط أو يومي، ثم تتدرج تدريجيًا نحو التعقيد. فيلم The Drama يعتمد على هذا المفهوم بشكل واضح، لكنه يبدأ بطريقة خادعة، إذ يظهر في البداية وكأنه فيلم رومانسية خفيفة (rom-com) مليء بالمواقف التقليدية.
+في هذا السياق الأولي، نتعرف على إيما وتشارلي، حيث يحدث لقائهما في مقهى بشكل يبدو عادي جدا، تشارلي يتصرف بطريقة طبيعية ويبدأ الحديث دون أن يعرف أن إيما لديها مشكلة في السمع في إحدى أذنيها، وهذا يؤدي إلى سوء فهم بسيط يتحول لاحقا إلى لحظة بداية مختلفة، عندما تقرر إيما منحه فرصة ثانية للتعارف، هذه اللحظة البسيطة تحمل فكرة مهمة: أن البداية لا تُبنى دائما على الكمال، بل على القدرة على تجاوز الانطباع الأول.
+لكن مع تقدم الفيلم، يبدأ التحول الحقيقي، وهنا ندخل إلى فكرة التصعيد العاطفي بشكل تدريجي، في بداية هذا التصعيد، يظهر التحول الأكبر عندما يدخل الماضي كعنصر أساسي في القصة، تعترف إيما أنه كان لديها تاريخ مرتبط بفكرة غير طبيعية في الماضي، حيث كانت في مدة مراهقتها تفكر في تنفيذ عملية إطلاق نار داخل المدرسة لكنها لم تنفذها. هذا العنصر يربط الفيلم بفكرة ال school shooting الشائعة في الولايات المتحدة الأمريكية كخلفية اجتماعية حساسة، ليس بهدف التركيز على الحدث نفسه، بل على أثر الماضي عندما يعود ليؤثر على الحاضر ويغير معنى العلاقات بالكامل.
+بعد هذا الاعتراف؛ يتحول التصعيد العاطفي إلى مستوى أعمق، حيث لا يعود التوتر فقط بين شخص وآخر، بل يصبح داخل كل علاقة في الفيلم. الثقة تبدأ بالتآكل تدريجيا، وكل شخصية تبدأ بإعادة تفسير ما حدث سابقا. وهذا ما يجعل المشاهد يشعر بعدم الارتياح، لأن الفيلم لا يمنحه مساحة للاستقرار، بل يدفعه دائما إلى إعادة التفكير في كل تفصيلة.
+هذا التصعيد يصل إلى مرحلة يصبح فيها من الصعب على الشخصيات الحفاظ على صورة العلاقة كما كانت في البداية. وهنا تكمن قوة الفيلم: أنه لا يعتمد على “انفجار واحد”، بل على انهيار تدريجي يجعل المشاهد يشعر أن النهاية كانت نتيجة طبيعية لتراكم طويل من المشاعر المكبوتة والعصبية وليس قرارا مفاجئا. 
+الإحساس بعدم الارتياح خلال تقدم الفيلم مع كل موقف وآخر هو جزء من التجربة، فالشخصيات نفسها لا تعيش حالة استقرار، وكل موقف يبدو طبيعيا في البداية لكنه يتحول إلى شيء ثقيل نفسيا مع الوقت، حيث لم ينجح الفيلم بطرح فكرة حساسه كهذه فقط، بل ايضا هذا الأسلوب جعل المشاهد يعيش التوتر بدل أن يراقبه فقط.
+ومن الجوانب المهمة أيضا أن إيما في بداية الفيلم منحت تشارلي فرصة ثانية في المقهى، ولم تحكم عليه من الانطباع الأول، هذا التصرف يوضح فكرة بسيطة لكنها عميقة: أن الإنسان قد يحتاج فرصة ليتوضح، وليس حكما سريعا، وفي المقابل؛ يظهر الزواج في نهاية الفيلم كرمز غير تقليدي، فهو ليس “نهاية سعيدة”، بل إغلاق لصفحة سابقة مليئة بالاغلاط من الطرفين ومحاولة لبداية جديدة.
+الفيلم في جوهره لا يتحدث عن الحب فقط، بل عن الطريقة التي تتشكل بها العلاقات عندما يتداخل الماضي مع الحاضر، وكيف يمكن للتصعيد الصغير غير المرئي أن يقود إلى نتائج كبيرة لا يمكن توقعها من البداية.
+
+ختاما، الفيلم لا يجيب الاسئلة التي يطرحها وإنما يعطي المشاهد مساحة التفسير من وجهة نظره، هل يجب أن نعرف ماضي الآخرين بالكامل قبل أن نقرر الاقتراب منهم؟ هل المعرفة تقرّبنا من الحقيقة أم تجعلنا أكثر قسوة في الحكم؟ وهل الإنسان قادر فعلا على التغيير، أم أن ماضيه يبقى جزءا منه مهما حاول؟.
+</p>
+
+            </div>
+
+
+            <div class="art-image-wrapper">
+                <img src="photo/ذا ددراما.png" alt="The Artist's Death: His Last Friend">
+            </div>
+
+            <div class="editor-credit">
+                <i class="fas fa-check-circle"></i>
+                <span>تدقيق:</span>
+                <span class="editor-name">  دانة حسام</span>
+            </div>
+        </div></div>
+    </main>
+
+    <footer class="footer"><div class="container"><p>جميع الحقوق محفوظة لبيورم 2026</p></div></footer>
+</body>
+</html>
